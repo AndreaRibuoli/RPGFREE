@@ -1,0 +1,4 @@
+QCLSRC    PROVA     CLLE      ESEMPIO
+QRPGLESRC RPG01     RPGLE     ESEMPIO
+QCLSRC    BUILD     CLLE      BUILD CLLE auto-generated
+QMAKSRC   BUILD     TXT       BUILD Makefile auto-generated
