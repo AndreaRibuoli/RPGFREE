@@ -30,7 +30,7 @@ With **Dcl\-DS** we are declaring a *Data Structure*: this one is specialized to
 
 The values are extracted from a *Stand\-alone* variable we declare (**Dcl\-S**) as **DATE** in the **\*ISO** format. We initialize the variable while declaring it with a **date literal**: `d'2023-12-31'`.
 
-A DATE type can be manipulated via the `%subdt` *built\-in-\function* (**BIF**). The second parameter possible values are limited by the type of the first one:
+A DATE type can be manipulated via the `%subdt` *built\-in\-function* (**BIF**). The second parameter possible values are limited by the type of the first one:
 
 | type      | \*MSECONDS | \*SECONDS | \*MINUTES | \*HOURS | \*DAYS | \*MONTHS | \*YEARS |
 |:---------:|:----------:|:---------:|:---------:|:-------:|:------:|:--------:|:-------:|
@@ -38,4 +38,4 @@ A DATE type can be manipulated via the `%subdt` *built\-in-\function* (**BIF**).
 | TIME      |            |    *yes*  |    *yes*  |  *yes*  |        |          |         |
 | TIMESTAMP |     *yes*  |    *yes*  |    *yes*  |  *yes*  | *yes*  |   *yes*  |  *yes*  |
 
-Please note that **\*MSECONDS** stands for **micro**\-seconds (not *milli*) and is only available the the type is a TIMESTAMP (not a TIME!).
+Please note that **\*MSECONDS** stands for **micro**\-seconds (not *milli*) and is only available if the type is a TIMESTAMP (not a TIME!).
