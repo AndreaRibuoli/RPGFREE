@@ -46,13 +46,13 @@ The **DSPLY** is an operation code: it accepts two factors and a result field un
 DSPLY{(E)} {message {message-queue {response}}}
 ```
 
-The parentheses (`()`)have nothing to do with the operation code: factor 1 ( actually the `message` ) will be the result of the concatenation of three elements:
+The parentheses `()` have nothing to do with the operation code: **factor 1** ( actually the `message` ) will be the result of the concatenation of three elements:
 
 *   'La data impostata è '
 *   %char(DataISO) 
 *   '.'
 
-A DATE type needs to be converted into a character one: the **%char** BIF does the job for us assuming our goal is to adopt the formats for the date specified in the  job settings. 
+A DATE type needs to be first converted into a character one: the **%char** BIF does the job for us assuming our goal is to adopt the formats for the date specified in the  job settings. 
 
 We can programmatically force a specific date format, e.g. `%char(DataISO : *iso)`
 
