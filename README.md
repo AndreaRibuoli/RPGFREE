@@ -58,7 +58,7 @@ The parentheses `()` have nothing to do with the operation code: **factor 1** ( 
 *   %char(DataISO) 
 *   '.'
 
-A DATE type needs to be first converted into a character one: the **%char** BIF does the job for us assuming our goal is to adopt the format for the date specified in the  job settings. 
+A DATE type needs to be first converted into a character one: the **%char** BIF does the job for us assuming our goal is to adopt the format for the date specified in the  job setting. 
 
 We can programmatically force a specific date format, e.g. `%char(DataISO : *iso)`
 
