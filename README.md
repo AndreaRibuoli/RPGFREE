@@ -50,6 +50,8 @@ The **DSPLY** is an operation code: it accepts two factors and a result field un
 DSPLY{(E)} {message {message-queue {response}}}
 ```
 
+`Dsply ('La data impostata è ' + %char(DataISO) + '.');`
+
 The parentheses `()` have nothing to do with the operation code: **factor 1** ( actually the `message` ) will be the result of the concatenation of three elements:
 
 *   'La data impostata è '
