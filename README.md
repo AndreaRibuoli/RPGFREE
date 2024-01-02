@@ -10,6 +10,8 @@ RPG **full** free format is adopted in these examples.
 
 ### RPG01
 
+---
+
 ``` RPG
 **FREE
 Dcl-DS DataLog DtaAra(*AUTO : *USRCTL : 'RPGFREE/DATALOG');
@@ -25,6 +27,8 @@ Dsply ('La data impostata è ' + %char(DataISO) + '.');
 *InLR = *ON;
 Return;
 ```
+
+---
 
 With **Dcl\-DS** we are declaring a *Data Structure*: this one is specialized to be based on a *Data Area* (**\*DTAARA**). On its turn this data area is qualified to be **\*AUTO**: this means the data area `RPGFREE/DATALOG` will be created (if not already existing) and will be updated consistently with the values the fields *Giorno*, *Mese* and *Anno* have when the program is ending.
 
