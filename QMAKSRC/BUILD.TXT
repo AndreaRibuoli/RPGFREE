@@ -11,7 +11,7 @@
 ALL: PROVA<PGM> RPG01<PGM> RPG02<PGM> RPG03<PGM>      
 
 RPG03<MODULE>: RPG03.QRPGLESRC<FILE,SQLRPGLE>  
-     CRTSQLRPGI OBJ(&TGTLIB/$(@F)) SRCFILE(&SRCLIB/QRPGLESRC) +     
+     CRTSQLRPGI OBJ(&BLDLIB/$(@F)) SRCFILE(&SRCLIB/QRPGLESRC) +     
       SRCMBR($(@F)) OBJTYPE(*MODULE) RPGPPOPT(*LVL1) TGTRLS(&TGTRLS) +
       DLYPRP(*YES) REPLACE(*YES) DBGVIEW(*SOURCE)                                           
                                                                                                   
