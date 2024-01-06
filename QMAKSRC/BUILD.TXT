@@ -3,14 +3,11 @@
 .SUFFIXES: .<PGM> .<MODULE> .QCLSRC<FILE> .QRPGLESRC<FILE>
 
 .QRPGLESRC<FILE>.<MODULE>:                                                                        
-     CRTRPGMOD MODULE(&BLDLIB/$(@F)) SRCFILE(&SRCLIB/QRPGLESRC) TGTRLS(&TGTRLS) OUTPUT(*PRINT)    
+     CRTRPGMOD MODULE(&BLDLIB/$(@F)) SRCFILE(&SRCLIB/QRPGLESRC) TGTRLS(&TGTRLS) OUTPUT(*NONE)    
                                                                                                   
 .QCLSRC<FILE>.<MODULE>:                                                                           
      CRTCLMOD MODULE(&BLDLIB/$(@F)) SRCFILE(&SRCLIB/QCLSRC) TGTRLS(&TGTRLS) OUTPUT(*NONE)   
 
-.<MODULE>.<PGM>:                                                                         
-     CRTPGM PGM(&TGTLIB/$(<F)) MODULE(&BLDLIB/$(<F)) TGTRLS(&TGTRLS)                                    
-                                                                                                                                                                                                    
 ALL: PROVA<PGM> RPG01<PGM> RPG02<PGM> RPG03<PGM>                                                  
                                                                                                   
 PROVA<PGM>: PROVA<MODULE>                                                                         
@@ -20,4 +17,7 @@ RPG01<PGM>: RPG01<MODULE>
      CRTPGM PGM(&TGTLIB/$(@F)) MODULE(&BLDLIB/$(@F)) TGTRLS(&TGTRLS)                              
 
 RPG02<PGM>: RPG02<MODULE>                                                                         
+     CRTPGM PGM(&TGTLIB/$(@F)) MODULE(&BLDLIB/$(@F)) TGTRLS(&TGTRLS)                              
+
+RPG03<PGM>: RPG03<MODULE>                                                                         
      CRTPGM PGM(&TGTLIB/$(@F)) MODULE(&BLDLIB/$(@F)) TGTRLS(&TGTRLS)                              
