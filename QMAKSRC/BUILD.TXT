@@ -9,7 +9,7 @@
      CRTCLMOD MODULE(&BLDLIB/$(@F)) SRCFILE(&SRCLIB/QCLSRC) TGTRLS(&TGTRLS) OUTPUT(*NONE)   
 
 .<MODULE>.<PGM>:                                                                         
-     CRTPGM PGM(&TGTLIB/$(*F)) MODULE(&BLDLIB/$(*F)) TGTRLS(&TGTRLS)                                    
+     CRTPGM PGM(&TGTLIB/$(<F)) MODULE(&BLDLIB/$(<F)) TGTRLS(&TGTRLS)                                    
                                                                                                                                                                                                     
 ALL: PROVA<PGM> RPG01<PGM> RPG02<PGM> RPG03<PGM>                                                  
                                                                                                   
