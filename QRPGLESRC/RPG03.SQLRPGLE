@@ -3,7 +3,7 @@
 //  start using embedded SQL
 //
 Dcl-S Codice LIKE(CDCLI)
-Dcl-S Codice LIKE(RAGSC)
+Dcl-S Nome   LIKE(RAGSC)
 Codice = '000780';
 Nome = 'Pluto Srl';
 EXEC SQL
