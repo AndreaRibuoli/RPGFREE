@@ -2,9 +2,13 @@
 //
 //  start using embedded SQL
 //
+Dcl-S Codice LIKE(CDCLI)
+Dcl-S Codice LIKE(RAGSC)
+Codice = '000780';
+Nome = 'Pluto Srl';
 EXEC SQL
   UPDATE ANCL200F
-  SET   ADNDLF = 'N'
-  WHERE CODCLI = '000101';
+  SET   RAGSC = :Nome
+  WHERE CDCLI = :Codice;
 *InLR = *ON;
 Return;
