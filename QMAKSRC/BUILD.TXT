@@ -14,25 +14,25 @@ RPG03<MODULE>: RPG03.QRPGLESRC<FILE,SQLRPGLE>
      CRTSQLRPGI OBJ(&BLDLIB/$(@F)) SRCFILE(&SRCLIB/QRPGLESRC) +     
       SRCMBR($(@F)) OBJTYPE(*MODULE) RPGPPOPT(*LVL1) TGTRLS(&TGTRLS) +
       DLYPRP(*YES) REPLACE(*YES) DBGVIEW(*SOURCE) OUTPUT(*NONE)   
-     -DLTSPLF FILE(RPG03) SPLNBR(1)
-     -DLTSPLF FILE(RPG03) SPLNBR(2)
-     -DLTSPLF FILE(RPG03) SPLNBR(3)                                       
+     -DLTSPLF FILE(RPG03) SPLNBR(*LAST)
+     -DLTSPLF FILE(RPG03) SPLNBR(*LAST)
+     -DLTSPLF FILE(RPG03) SPLNBR(*LAST)                                       
 
 RPG04<MODULE>: RPG04.QRPGLESRC<FILE,SQLRPGLE>  
      CRTSQLRPGI OBJ(&BLDLIB/$(@F)) SRCFILE(&SRCLIB/QRPGLESRC) +     
       SRCMBR($(@F)) OBJTYPE(*MODULE) RPGPPOPT(*LVL1) TGTRLS(&TGTRLS) +
       DLYPRP(*YES) REPLACE(*YES) DBGVIEW(*SOURCE) OUTPUT(*NONE)   
-     -DLTSPLF FILE(RPG03) SPLNBR(1)
-     -DLTSPLF FILE(RPG03) SPLNBR(2)
-     -DLTSPLF FILE(RPG03) SPLNBR(3)                                       
+     -DLTSPLF FILE(RPG03) SPLNBR(*LAST)
+     -DLTSPLF FILE(RPG03) SPLNBR(*LAST)
+     -DLTSPLF FILE(RPG03) SPLNBR(*LAST)                                       
                                                                                                   
 RPG05<MODULE>: RPG05.QRPGLESRC<FILE,SQLRPGLE>  
      CRTSQLRPGI OBJ(&BLDLIB/$(@F)) SRCFILE(&SRCLIB/QRPGLESRC) +     
       SRCMBR($(@F)) OBJTYPE(*MODULE) RPGPPOPT(*LVL1) TGTRLS(&TGTRLS) +
       DLYPRP(*YES) REPLACE(*YES) DBGVIEW(*SOURCE) OUTPUT(*NONE)   
-     -DLTSPLF FILE(RPG03) SPLNBR(1)
-     -DLTSPLF FILE(RPG03) SPLNBR(2)
-     -DLTSPLF FILE(RPG03) SPLNBR(3)                                       
+     -DLTSPLF FILE(RPG03) SPLNBR(*LAST)
+     -DLTSPLF FILE(RPG03) SPLNBR(*LAST)
+     -DLTSPLF FILE(RPG03) SPLNBR(*LAST)                                       
                                                                                                   
 PROVA<PGM>: PROVA<MODULE>                                                                         
      CRTPGM PGM(&TGTLIB/$(@F)) MODULE(&BLDLIB/$(@F)) TGTRLS(&TGTRLS)                              
@@ -47,4 +47,7 @@ RPG03<PGM>: RPG03<MODULE>
      CRTPGM PGM(&TGTLIB/$(@F)) MODULE(&BLDLIB/$(@F)) TGTRLS(&TGTRLS)                              
 
 RPG04<PGM>: RPG04<MODULE>                                                                         
+     CRTPGM PGM(&TGTLIB/$(@F)) MODULE(&BLDLIB/$(@F)) TGTRLS(&TGTRLS)                              
+
+RPG05<PGM>: RPG05<MODULE>                                                                         
      CRTPGM PGM(&TGTLIB/$(@F)) MODULE(&BLDLIB/$(@F)) TGTRLS(&TGTRLS)                              
