@@ -63,3 +63,94 @@ A DATE type needs to be first converted into a character one: the **%char** BIF 
 We can programmatically force a specific date format, e.g. `%char(DataISO : *iso)`
 
  
+### RPG02
+
+---
+
+``` RPG
+**FREE
+Dcl-S $data_$#@ DATE(*ISO) Inz(d'2023-12-31');
+Dcl-S #data_$#@ DATE(*ISO) Inz(d'2024-01-01');
+Dcl-S @data_$#@ DATE(*ISO) Inz(d'2024-01-02');
+Dsply ('La prima data impostata è '   + %char($data_$#@) + '.');
+Dsply ('La seconda data impostata è ' + %char(#data_$#@) + '.');
+Dsply ('La terzaa data impostata è '  + %char(@data_$#@) + '.');
+*InLR = *ON;
+Return;
+```
+
+---
+
+This example is only to verify that in addition to alphabetic characters
+variable names can also begin with `$`, `#`, and `@`.
+Subsequent characters can also be numeric and composed of `_`.
+
+
+### RPG03
+
+---
+
+``` RPG
+*FREE
+Dcl-S CDCLI CHAR(6);
+Dcl-S RAGSC CHAR(35);
+Dcl-S Codice LIKE(CDCLI);
+Dcl-S Nome   LIKE(RAGSC);
+Codice = '000780';
+Nome = 'Pluto Srl';
+EXEC SQL
+  UPDATE ANCL200F
+  SET   RAGSC = :Nome
+  WHERE CDCLI = :Codice;
+*InLR = *ON;
+Return;
+```
+
+---
+
+This example (**SQLRPGLE** type) verifies the ability to embed SQL statements.
+Also uses the `LIKE` option to declare a variable adopting another one.
+It demostrates the use of **host variable** that appear in the SQL statement
+prefixed with `:`.
+
+### RPG04
+
+---
+
+``` RPG
+**FREE
+Dcl-S DataISO DATE(*ISO) Inz(d'2023-12-31');
+Dsply ('La data è inizializzata a ' + %char(DataISO) + '.');
+EXEC SQL SELECT CURRENT_DATE INTO :DataISO FROM SYSIBM/SYSDUMMY1;
+Dsply ('La data ora è impostata a ' + %char(DataISO) + '.');
+*InLR = *ON;
+Return;
+```
+
+---
+ 
+This example uses the **INTO** SQL keyword to a use host variable as receiver 
+of the value returned by a **SELECT** statement.
+
+### RPG05
+
+---
+
+``` RPG
+**FREE
+Dcl-DS DataOraISO;
+  #Data DATE(*ISO) Inz(d'2023-12-31');
+  #Ora  TIME(*ISO);
+End-DS;
+Dsply ('La data è inizializzata a ' + %char(#Data) + '.');
+EXEC SQL SELECT CURRENT_DATE, CURRENT_TIME INTO :DataOraISO FROM SYSIBM/SYSDUMMY1;
+Dsply ('La data ora è impostata a ' + %char(#Data) + '.');
+Dsply ('L''ora è stata impostata a ' + %char(#Ora) + '.');
+*InLR = *ON;
+Return;
+```
+
+---
+ 
+This example uses the **INTO** SQL keyword to a use a **DS** host variable as receiver 
+of **the values** returned by a **SELECT** statement. The number and type of fields in the DS need to match those returned by the SELECT statement.
