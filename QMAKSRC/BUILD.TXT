@@ -37,3 +37,6 @@ RPG02<PGM>: RPG02<MODULE>
 
 RPG03<PGM>: RPG03<MODULE>                                                                         
      CRTPGM PGM(&TGTLIB/$(@F)) MODULE(&BLDLIB/$(@F)) TGTRLS(&TGTRLS)                              
+
+RPG04<PGM>: RPG04<MODULE>                                                                         
+     CRTPGM PGM(&TGTLIB/$(@F)) MODULE(&BLDLIB/$(@F)) TGTRLS(&TGTRLS)                              
