@@ -3,7 +3,7 @@
 .SUFFIXES: .<PGM> .<MODULE> .QCLSRC<FILE> .QRPGLESRC<FILE,RPGLE> .QRPGLESRC<FILE,SQLRPGLE>
 
 .QRPGLESRC<FILE,RPGLE>.<MODULE>:                                                                        
-     CRTRPGMOD MODULE(&BLDLIB/$(@F)) SRCFILE(&SRCLIB/QRPGLESRC) TGTRLS(&TGTRLS) OUTPUT(*NONE)    
+     CRTRPGMOD MODULE(&BLDLIB/$(@F)) SRCFILE(&SRCLIB/QRPGLESRC) TGTRLS(&TGTRLS) OUTPUT(*PRINT)    
                                                                                                   
 .QCLSRC<FILE>.<MODULE>:                                                                           
      CRTCLMOD MODULE(&BLDLIB/$(@F)) SRCFILE(&SRCLIB/QCLSRC) TGTRLS(&TGTRLS) OUTPUT(*NONE)   
