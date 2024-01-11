@@ -176,3 +176,24 @@ Return;
  previously declared. Then queries all the fields of the local database record.
  So it can display the database name. 
  
+ 
+### RPG07
+
+---
+
+``` RPG
+ **FREE
+Dcl-DS RDB_dir EXTNAME('QADBXRDBD') PREFIX('RDB' : 3) End-DS;
+Dcl-S Local LIKE(RDBRMTN) INZ('*LOCAL');
+EXEC SQL SELECT * INTO :RDB_dir FROM QADBXRDBD WHERE DBXRMTN = :Local;
+Dsply ('Nome DATABASE: ' + RDBRDBN);
+*InLR = *ON;
+Return;
+```
+
+---
+
+Similar to RPG06 but we introduce **PREFIX** replacing the first 3 chars of each
+field name with 'RDB'. Note the *LIKE* option in Dcl\-S that is referring to *RDBRMTN*
+instead of *DBXRMTN*. Similarly we will use *RDBRDBN* instead of *DBXRDBN*.
+
