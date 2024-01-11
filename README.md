@@ -8,9 +8,9 @@ It will contain simple RPG programs that are commented here in the **README.md**
 
 RPG **full** free format is adopted in these examples.
 
-### RPG01
 
 ---
+### RPG01
 
 ``` RPG
 **FREE
@@ -63,9 +63,8 @@ A DATE type needs to be first converted into a character one: the **%char** BIF 
 We can programmatically force a specific date format, e.g. `%char(DataISO : *iso)`
 
  
-### RPG02
-
 ---
+### RPG02
 
 ``` RPG
 **FREE
@@ -86,9 +85,9 @@ variable names can also begin with `$`, `#`, and `@`.
 Subsequent characters can also be numeric and composed of `_`.
 
 
-### RPG03
 
 ---
+### RPG03
 
 ``` RPG
 *FREE
@@ -113,9 +112,9 @@ Also uses the `LIKE` option to declare a variable adopting another one.
 It demostrates the use of **host variable** that appear in the SQL statement
 prefixed with `:`.
 
-### RPG04
 
 ---
+### RPG04
 
 ``` RPG
 **FREE
@@ -132,9 +131,9 @@ Return;
 This example uses the **INTO** SQL keyword to a use host variable as receiver 
 of the value returned by a **SELECT** statement.
 
-### RPG05
 
 ---
+### RPG05
 
 ``` RPG
 **FREE
@@ -155,9 +154,9 @@ Return;
 This example uses the **INTO** SQL keyword to a use a **DS** host variable as receiver 
 of **the values** returned by a **SELECT** statement. The number and type of fields in the DS need to match those returned by the SELECT statement.
 
-### RPG06
 
 ---
+### RPG06
 
 ``` RPG
 **FREE
@@ -176,10 +175,8 @@ Return;
  previously declared. Then queries all the fields of the local database record.
  So it can display the database name. 
  
- 
-### RPG07
-
 ---
+### RPG07
 
 ``` RPG
  **FREE
