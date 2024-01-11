@@ -154,3 +154,25 @@ Return;
  
 This example uses the **INTO** SQL keyword to a use a **DS** host variable as receiver 
 of **the values** returned by a **SELECT** statement. The number and type of fields in the DS need to match those returned by the SELECT statement.
+
+### RPG06
+
+---
+
+``` RPG
+**FREE
+Dcl-DS RDB_dir EXTNAME('QADBXRDBD') End-DS;
+Dcl-S Local LIKE(DBXRMTN) INZ('*LOCAL');
+EXEC SQL SELECT * INTO :RDB_dir FROM QADBXRDBD WHERE DBXRMTN = :Local;
+Dsply ('Nome DATABASE: ' + DBXRDBN);
+*InLR = *ON;
+Return;
+```
+
+---
+
+ This example declares a DS based on the fields of an existing file (**EXTNAME**).
+ Also it declares a variable based on one of the fields (**LIKE**) of the DS 
+ previously declared. Then queries all the fields of the local database record.
+ So it can display the database name. 
+ 
