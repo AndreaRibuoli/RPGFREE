@@ -1,0 +1,12 @@
+00010A*========================================================================*
+00020A*= PROVA00F - Simple file defined via DDS
+00030A*========================================================================*
+00050A          R PROVA                     TEXT('Sample record format')
+00070A            ARTICS        15A         TEXT('Articolo')
+00070A            VERSIS         5A         TEXT('Versione')
+00070A            DESCRS        70A         TEXT('Descrizione')
+00070A            UNITAS         5A         TEXT('Unità misura')
+00070A            QUANTS        11S 0       TEXT('Quantità richiesta')
+00070A            PREZZS        13S 3       TEXT('Prezzo')
+00070A            DTCONS        10A         TEXT('Data Consegna')
+00070A            COMMES         8A         TEXT('Cod. Commessa')
