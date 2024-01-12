@@ -91,16 +91,16 @@ Subsequent characters can also be numeric and composed of `_`.
 
 ``` RPG
 *FREE
-Dcl-S CDCLI CHAR(6);
-Dcl-S RAGSC CHAR(35);
-Dcl-S Codice LIKE(CDCLI);
-Dcl-S Nome   LIKE(RAGSC);
-Codice = '000780';
-Nome = 'Pluto Srl';
+Dcl-S ARTICS CHAR(15);
+Dcl-S DESCRS CHAR(70);
+Dcl-S Codice LIKE(ARTICS);
+Dcl-S Descri LIKE(DESCRS);
+Codice = '0001020100';
+Descri = 'New description for this item';
 EXEC SQL
-  UPDATE ANCL200F
-  SET   RAGSC = :Nome
-  WHERE CDCLI = :Codice;
+  UPDATE PROVA00F
+  SET   DESCRS = :Descri
+  WHERE ARTICS = :Codice;
 *InLR = *ON;
 Return;
 ```
