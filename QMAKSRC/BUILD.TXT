@@ -18,22 +18,20 @@
       DLYPRP(*YES) REPLACE(*YES) DBGVIEW(*SOURCE) OUTPUT(*NONE) +         
       COMPILEOPT('OUTPUT(*NONE)')     
 
-RPG_PGMS= RPG03<PGM> RPG04<PGM> RPG05<PGM> RPG06<PGM> RPG07<PGM>                                     
+RPG_PGMS= RPG01<PGM> RPG02<PGM>                                    
+
+SQL_PGMS= RPG03<PGM> RPG04<PGM> RPG05<PGM> RPG06<PGM> RPG07<PGM>                                     
                                                                                                   
-ALL:  PROVA<PGM> RPG01<PGM> RPG02<PGM> $(RPG_PGMS)
+ALL:  PROVA<PGM> $(RPG_PGMS) $(SQL_PGMS)
 
 RPG03<MODULE>: PROVA00F<FILE>                                         
                                                                       
 PROVA<PGM>: PROVA<MODULE>                                             
      CRTPGM PGM(&TGTLIB/$(@F)) MODULE(&BLDLIB/$(@F)) TGTRLS(&TGTRLS)
                                                                       
-RPG01<PGM>: RPG01<MODULE>                                             
-     CRTPGM PGM(&TGTLIB/$(@F)) MODULE(&BLDLIB/$(@F)) TGTRLS(&TGTRLS)  
-     -DLTSPLF FILE($(@F)) SPLNBR(*LAST) SELECT(*CURRENT *ALL *ALL CRTSQLRPGI)   
-                                                                      
-RPG02<PGM>: RPG02<MODULE>                                             
-     CRTPGM PGM(&TGTLIB/$(@F)) MODULE(&BLDLIB/$(@F)) TGTRLS(&TGTRLS)  
+$(RPG_PGMS): $(RPG_PGMS:<PGM>=<MODULE>)                                                                      
+      CRTPGM PGM(&TGTLIB/$(@F)) MODULE(&BLDLIB/$(@F)) TGTRLS(&TGTRLS)  
      -DLTSPLF FILE($(@F)) SPLNBR(*LAST) SELECT(*CURRENT *ALL *ALL CRTSQLRPGI)   
 
-$(RPG_PGMS): $(RPG_PGMS:<PGM>=<MODULE>)                                                                      
+$(SQL_PGMS): $(SQL_PGMS:<PGM>=<MODULE>)                                                                      
      CRTPGM PGM(&TGTLIB/$(@F)) MODULE(&BLDLIB/$(@F)) TGTRLS(&TGTRLS) 
