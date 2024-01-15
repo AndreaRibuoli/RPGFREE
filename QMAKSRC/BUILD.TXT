@@ -27,11 +27,11 @@ PROVA<PGM>: PROVA<MODULE>
                                                                       
 RPG01<PGM>: RPG01<MODULE>                                             
      CRTPGM PGM(&TGTLIB/$(@F)) MODULE(&BLDLIB/$(@F)) TGTRLS(&TGTRLS)  
-     -DLTSPLF FILE(RPG01) SPLNBR(*LAST) SELECT(*CURRENT *ALL *ALL CRTSQLRPGI)   
+     -DLTSPLF FILE($(@F)) SPLNBR(*LAST) SELECT(*CURRENT *ALL *ALL CRTSQLRPGI)   
                                                                       
 RPG02<PGM>: RPG02<MODULE>                                             
      CRTPGM PGM(&TGTLIB/$(@F)) MODULE(&BLDLIB/$(@F)) TGTRLS(&TGTRLS)  
-     -DLTSPLF FILE(RPG01) SPLNBR(*LAST) SELECT(*CURRENT *ALL *ALL CRTSQLRPGI)   
+     -DLTSPLF FILE($(@F)) SPLNBR(*LAST) SELECT(*CURRENT *ALL *ALL CRTSQLRPGI)   
                                                                       
 RPG03<PGM>: RPG03<MODULE>                                             
      CRTPGM PGM(&TGTLIB/$(@F)) MODULE(&BLDLIB/$(@F)) TGTRLS(&TGTRLS)  
