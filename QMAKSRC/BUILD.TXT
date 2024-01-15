@@ -42,8 +42,8 @@ RPG04<PGM>: RPG04<MODULE>
 RPG05<PGM>: RPG05<MODULE>                                             
      CRTPGM PGM(&TGTLIB/$(@F)) MODULE(&BLDLIB/$(@F)) TGTRLS(&TGTRLS)  
                                                                       
-RPG06<PGM>: RPG06<MODULE>                                            
+RPG06<PGM> RPG07<PGM>: RPG06<MODULE> RPG07<MODULE>                                            
      CRTPGM PGM(&TGTLIB/$(@F)) MODULE(&BLDLIB/$(@F)) TGTRLS(&TGTRLS) 
                                                                      
-RPG07<PGM>: RPG07<MODULE>                                            
-     CRTPGM PGM(&TGTLIB/$(@F)) MODULE(&BLDLIB/$(@F)) TGTRLS(&TGTRLS) 
+# RPG07<PGM>: RPG07<MODULE>                                            
+#     CRTPGM PGM(&TGTLIB/$(@F)) MODULE(&BLDLIB/$(@F)) TGTRLS(&TGTRLS) 
