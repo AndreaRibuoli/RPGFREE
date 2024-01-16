@@ -194,3 +194,59 @@ Similar to RPG06 but we introduce **PREFIX** replacing the first 3 chars of each
 field name with 'RDB'. Note the *LIKE* option in Dcl\-S that is referring to *RDBRMTN*
 instead of *DBXRMTN*. Similarly we will use *RDBRDBN* instead of *DBXRDBN*.
 
+
+---
+### RPG08
+
+``` RPG
+**FREE
+Dcl-S ARTICS CHAR(15);
+Dcl-S DESCRS CHAR(70);
+Dcl-S Codice LIKE(ARTICS);
+Dcl-S Descri LIKE(DESCRS);
+Codice = '0001020100';
+Descri = 'New description for this item';
+EXEC SQL
+  UPDATE PROVA00F
+  SET   DESCRS = :Descri
+  WHERE ARTICS = :Codice;
+IF SQLCOD < 0;
+  Dsply ('Codice errore SQL ' + %char(SQLCOD) + '.');
+  Dsply (%subst(SQLERRMC:1:50));
+ENDIF;
+*InLR = *ON;
+Return;
+```
+
+---
+
+Similar to RPG03 but with testing of SQL errors.
+
+As soon as PROVA00F was created in RPGFREE library if this is not in the library list
+by calling *RPGFREE/RPG08* we get:
+
+```
+DSPLY  Codice errore SQL -204. 
+DSPLY    PROVA00F  *LIBL  FILE 
+```
+
+specifying that PROVA00F was not found in `*LIBL`.
+Performed an `ADDLIBLE LIB(RPGFREE)` we get:
+
+```
+DSPLY  Codice errore SQL -7008.
+DSPLY    PROVA00F    RPGFREE   
+```
+
+Where SQL7008 explains we need journaling (&1 and &2 are provided in the
+**SQLERRMC** field).  
+
+```
+                      Select Message Details to Display            
+                                                            System:
+Message ID . . . . . . . . . :   SQL7008                           
+Message file . . . . . . . . :   QSQLMSG                           
+  Library  . . . . . . . . . :     QSYS                            
+Message text . . . . . . . . :   &1 in &2 not valid for operation. 
+```
+
