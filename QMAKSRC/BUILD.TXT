@@ -11,7 +11,7 @@
 .QCLSRC<FILE>.<MODULE>:                                                                       
      CRTCLMOD MODULE(&BLDLIB/$(@F)) SRCFILE(&SRCLIB/QCLSRC) TGTRLS(&TGTRLS) OUTPUT(*NONE)     
 
-.QRPGLESRC<FILE,SQLRPGLE>.<MODULE>:                                       
+.QRPGLESRC<FILE>.<MODULE>:                                       
      -ADDLIBLE LIB(&TGTLIB)                                               
      CRTSQLRPGI OBJ(&BLDLIB/$(@F)) SRCFILE(&SRCLIB/QRPGLESRC) +           
       SRCMBR($(@F)) OBJTYPE(*MODULE) RPGPPOPT(*LVL1) TGTRLS(&TGTRLS) +    
