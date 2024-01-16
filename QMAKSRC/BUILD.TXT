@@ -5,8 +5,11 @@
 .<MODULE>.<PGM>:                                                                              
      CRTPGM PGM(&TGTLIB/$(@F)) MODULE(&BLDLIB/$(@F)) TGTRLS(&TGTRLS)                          
                                                                                               
-.QDDSPF<FILE,PF>.<FILE>:                                                                      
-     CRTPF FILE(&TGTLIB/$(@F)) SRCFILE(&SRCLIB/QDDSPF) OPTION(*NOSOURCE *NOLIST)              
+.QDDSPF<FILE,PF>.<FILE>:
+     -CRTJRNRCV JRNRCV(&TGTLIB/RPGJRNRCV)                                           
+     -CRTJRN JRN(&TGTLIB/RPGJRN) JRNRCV(&TGTLIB/RPGJRNRCV)                          
+     CRTPF FILE(&TGTLIB/$(@F)) SRCFILE(&SRCLIB/QDDSPF) OPTION(*NOSOURCE *NOLIST)    
+     -STRJRNPF FILE(&TGTLIB/$(@F)) JRN(&TGTLIB/RPGJRN)                                                                                                    
                                                                                               
 .QCLSRC<FILE>.<MODULE>:                                                                       
      CRTCLMOD MODULE(&BLDLIB/$(@F)) SRCFILE(&SRCLIB/QCLSRC) TGTRLS(&TGTRLS) OUTPUT(*NONE)     
@@ -20,13 +23,16 @@
 
 RPG_PGMS= RPG01<PGM> RPG02<PGM>                                    
 
-SQL_PGMS= RPG03<PGM> RPG04<PGM> RPG05<PGM> RPG06<PGM> RPG07<PGM> RPG08<PGM>                                     
+SQL_PGMS= RPG03<PGM> RPG04<PGM> RPG05<PGM> RPG06<PGM> RPG07<PGM> RPG08<PGM>  +
+          RPG09<PGM>                                     
                                                                                                   
 ALL:  PROVA<PGM> $(RPG_PGMS) $(SQL_PGMS)
 
 RPG03<MODULE>: PROVA00F<FILE>                                         
 
 RPG08<MODULE>: PROVA00F<FILE>                                         
+
+RPG09<MODULE>: PROVA00F<FILE>                                         
 
 PROVA<PGM>: PROVA<MODULE>                                             
      CRTPGM PGM(&TGTLIB/$(@F)) MODULE(&BLDLIB/$(@F)) TGTRLS(&TGTRLS)
