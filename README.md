@@ -109,7 +109,7 @@ Return;
 
 This example (**SQLRPGLE** type) verifies the ability to embed SQL statements.
 Also uses the `LIKE` option to declare a variable adopting another one.
-It demostrates the use of **host variable** that appear in the SQL statement
+It demostrates the use of **host variable**s that appear in the SQL statement
 prefixed with `:`.
 
 
