@@ -14,6 +14,7 @@ EXEC SQL
   WHERE ARTICS = :Codice;
 IF SQLCOD < 0;
   Dsply ('Codice errore SQL ' + %char(SQLCOD) + '.');
+  Dsply ('Testo messaggio: ' + SQLERRMC);
 ENDIF;
 *InLR = *ON;
 Return;
