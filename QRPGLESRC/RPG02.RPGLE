@@ -5,6 +5,8 @@
 // The remaining characters must be alphabetic or numeric.
 //   This includes the underscore $, #, @, and _.
 //
+// with CCSID 273 (Germany/Austria), @ is not valid but § is
+//
 Dcl-S $data_$#@ DATE(*ISO) Inz(d'2023-12-31');
 Dcl-S #data_$#@ DATE(*ISO) Inz(d'2024-01-01');
 Dcl-S @data_$#@ DATE(*ISO) Inz(d'2024-01-02');
