@@ -10,6 +10,8 @@ EXEC SQL
 IF SQLCOD < 0;
   Dsply ('Codice errore SQL ' + %char(SQLCOD) + '.');
   Dsply (%subst(SQLERRMC:1:50));
+ELSE;
+  EXEC SQL COMMIT;
 ENDIF;
 *InLR = *ON;
 Return;
