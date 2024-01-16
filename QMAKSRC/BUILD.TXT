@@ -15,8 +15,10 @@
      -ADDLIBLE LIB(&TGTLIB)                                               
      CRTSQLRPGI OBJ(&BLDLIB/$(@F)) SRCFILE(&SRCLIB/QRPGLESRC) +           
       SRCMBR($(@F)) OBJTYPE(*MODULE) RPGPPOPT(*LVL1) TGTRLS(&TGTRLS) +    
-      DLYPRP(*YES) REPLACE(*YES) DBGVIEW(*SOURCE) OUTPUT(*NONE) +         
-      COMPILEOPT('OUTPUT(*NONE)')     
+      DLYPRP(*YES) REPLACE(*YES) DBGVIEW(*SOURCE) OUTPUT(*NONE) 
+      
+#      +         
+#      COMPILEOPT('OUTPUT(*NONE)')     
 
 RPG_PGMS= RPG01<PGM> RPG02<PGM>                                    
 
