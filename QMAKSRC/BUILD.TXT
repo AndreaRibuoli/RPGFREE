@@ -6,13 +6,13 @@
      CRTPGM PGM(&TGTLIB/$(@F)) MODULE(&BLDLIB/$(@F)) TGTRLS(&TGTRLS)                          
                                                                                               
 .QDDSPF<FILE,PF>.<FILE>:
-     -CRTJRNRCV JRNRCV(&TGTLIB/RPGJRNRCV)                                           
-     -CRTJRN JRN(&TGTLIB/RPGJRN) JRNRCV(&TGTLIB/RPGJRNRCV)                          
-     -CRTPF FILE(&TGTLIB/$(@F)) SRCFILE(&SRCLIB/QDDSPF) OPTION(*NOSOURCE *NOLIST)
-      STRJRNPF FILE(&TGTLIB/$(@F)) JRN(&TGTLIB/RPGJRN) LOGLVL(*ALL)                                                                                                   
-                                                                                              
+     -CRTJRNRCV JRNRCV(&TGTLIB/RPGJRNRCV)
+     -CRTJRN JRN(&TGTLIB/RPGJRN) JRNRCV(&TGTLIB/RPGJRNRCV)
+     CRTPF FILE(&TGTLIB/$(@F)) SRCFILE(&SRCLIB/QDDSPF) OPTION(*NOSOURCE *NOLIST)
+     -STRJRNPF FILE(&TGTLIB/$(@F)) JRN(&TGTLIB/RPGJRN) LOGLVL(*ALL)
+
 .QCLSRC<FILE>.<MODULE>:                                                                       
-     CRTCLMOD MODULE(&BLDLIB/$(@F)) SRCFILE(&SRCLIB/QCLSRC) TGTRLS(&TGTRLS) OUTPUT(*NONE)     
+     CRTCLMOD MODULE(&BLDLIB/$(@F)) SRCFILE(&SRCLIB/QCLSRC) TGTRLS(&TGTRLS) OUTPUT(*NONE)
 
 .QRPGLESRC<FILE>.<MODULE>:                                       
      -ADDLIBLE LIB(&TGTLIB)                                               
